@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAHJUL HUDA DARS</title>
+  
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon.svg" />
+  <link rel="shortcut icon" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/apple-touch-icon.png" />
+  <link rel="manifest" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/site.webmanifest" />
+
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0c0c1e; /* Darker background */
+      color: rgb(0, 0, 0);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* --- ⭐ പൂർണ്ണ പശ്ചാത്തല ആനിമേഷൻ ⭐ --- */
+    .liquid-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .blob {
+        position: absolute;
+        background: linear-gradient(180deg, #6843ee, #b7099a);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        animation: move-blob 20s infinite ease-in-out alternate;
+        opacity: 0.5; /* Slightly more subtle */
+    }
+
+    .blob:nth-child(1) { width: 28vw; height: 28vw; top: -10vh; left: -15vw; animation-duration: 22s; }
+    .blob:nth-child(2) { width: 24vw; height: 24vw; bottom: -15vh; right: -20vw; animation-duration: 28s; animation-direction: alternate-reverse; }
+    .blob:nth-child(3) { width: 22vw; height: 22vw; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 18s; }
+    .blob:nth-child(4) { width: 26vw; height: 26vw; top: 20vh; right: -10vw; animation-duration: 25s; }
+    .blob:nth-child(5) { width: 20vw; height: 20vw; bottom: 5vh; left: 10vw; animation-duration: 20s; animation-direction: alternate-reverse; }
+    
+    @keyframes move-blob {
+      0%   { transform: translate(0, 0) rotate(0deg); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      100% { transform: translate(30vw, 40vh) rotate(360deg); border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
+    }
+    
+    .content-wrapper { padding: 20px; position: relative; z-index: 1; }
+    header { text-align: center; padding: 2rem 1rem; min-height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    header h1 { 
+        color: #ffffff; 
+        text-shadow: 0 0 15px rgba(0,0,0,0.5); 
+        font-size: 2.8rem;
+        position: relative;
+    }
+    
+    /* --- ⭐ പ്രീമിയം ലോഗോ ഇഫക്റ്റ് ⭐ --- */
+    .logo-container { 
+        position: relative; 
+        width: 150px; 
+        height: 150px; 
+        margin: 0 auto 1rem; 
+    }
+    .logo { 
+        width: 100px; 
+        height: 100px; 
+        border-radius: 50%; /* Changed to circular */
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        z-index: 2; 
+        object-fit: contain;
+        animation: slow-spin 20s linear infinite; /* Added spinning animation */
+    }
+    
+    .orbit-ring {
+        position: absolute;
+        width: 130px; height: 130px;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: conic-gradient(from 90deg, transparent 0%, transparent 70%, #00e5ff 100%);
+        animation: spin 3s linear infinite;
+        z-index: 1;
+    }
+    .orbit-ring::before, .orbit-ring::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+    }
+    .orbit-ring::before {
+        width: 150px; height: 150px;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        background: conic-gradient(from 270deg, transparent 0%, transparent 80%, #e040fb 100%);
+        animation: spin-reverse 4s linear infinite;
+    }
+    .orbit-ring::after {
+        width: 110px; height: 110px;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        background: radial-gradient(circle, rgba(224, 64, 251, 0.3) 0%, rgba(224, 64, 251, 0) 60%);
+        animation: pulse-glow 2s infinite alternate;
+    }
+    
+    @keyframes spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+    @keyframes spin-reverse { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(-360deg); } }
+    @keyframes pulse-glow { from { opacity: 0.7; transform: translate(-50%,-50%) scale(1); } to { opacity: 1; transform: translate(-50%,-50%) scale(1.1); } }
+    @keyframes slow-spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+    /* --- ⭐ ലോഗോ ഇഫക്റ്റ് ഇവിടെ അവസാനിക്കുന്നു --- */
+
+    .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
+    .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* --- ⭐ "About Us" ബോക്സ് --- */
+    .description {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 3rem;
+      border-radius: 35px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+    }
+    
+    .raindrop-container {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .raindrop {
+        position: absolute;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.3));
+        border-radius: 1px 1px 10px 10px;
+        animation: fall linear infinite;
+    }
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+        }
+    }
+    
+    .description-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .description h2, .description p {
+      position: relative;
+      color: #ffffff;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    }
+    .description h2 { font-size: 2.5rem; }
+    .description p { font-size: 1.1rem; line-height: 1.6; }
+
+    /* മാഗ്നിഫയിംഗ് ഇഫക്റ്റ് */
+    header h1::after,
+    .description h2::after, .description p::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        color: white;
+        transform: scale(1.1);
+        filter: brightness(1.5);
+        mask-image: radial-gradient(circle at 50% 50%, white 20px, transparent 80px);
+        mask-size: 100px 100px;
+        mask-repeat: no-repeat;
+        animation: magnify-text 6s infinite ease-in-out;
+    }
+    header h1::after { animation-duration: 7s; }
+    .description p::after { animation-duration: 8s; animation-delay: 1s; }
+
+    @keyframes magnify-text {
+      0% { mask-position: -10% 20%; }
+      50% { mask-position: 110% 70%; }
+      100% { mask-position: -10% 20%; }
+    }
+
+    /* --- ⭐ AI Search UI --- */
+    .search-section {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        z-index: 100;
+    }
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .search-icon-wrapper {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        overflow: hidden; /* For gradient animation */
+    }
+    .search-icon-wrapper:hover {
+        transform: scale(1.1);
+    }
+    .search-icon-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 150%;
+        background: conic-gradient(transparent, #37e2f5, #b7099a, #6843ee, transparent 40%);
+        animation: spin-search 3s linear infinite;
+    }
+    @keyframes spin-search {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .search-icon-wrapper::after {
+        content: '';
+        position: absolute;
+        inset: 3px;
+        background: #0c0c1e; /* Match body background */
+        border-radius: 50%;
+    }
+    .search-icon {
+        width: 24px;
+        height: 24px;
+        color: white;
+        position: relative;
+        z-index: 1; /* Above the gradient background */
+        stroke-width: 2;
+    }
+
+    .search-input-wrapper {
+        position: relative;
+        width: 0;
+        opacity: 0;
+        transition: width 0.4s ease, opacity 0.2s ease;
+        border-radius: 50px;
+        overflow: hidden;
+        margin-right: -50px; /* Overlap icon */
+    }
+    .search-input-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%; /* Wider for a smooth gradient */
+        height: 300%;
+        background: linear-gradient(90deg, #b7099a, #6843ee, #37e2f5);
+        animation: move-gradient 4s linear infinite;
+    }
+    @keyframes move-gradient {
+        from { transform: translate(-50%, -50%) translateX(-25%); }
+        to { transform: translate(-50%, -50%) translateX(25%); }
+    }
+    .search-input-wrapper::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 50px;
+    }
+    .search-input {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 50px;
+        padding: 12px 60px 12px 25px;
+        font-size: 1rem;
+        border: none;
+        background: transparent;
+        color: white;
+        outline: none;
+        box-sizing: border-box;
+    }
+    .search-container.active .search-input-wrapper {
+        width: 350px;
+        opacity: 1;
+    }
+    
+    /* --- ⭐ Gallery & Modal --- */
+    .gallery-box {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(15, 6, 65, 0.4); 
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      box-shadow: 0 0 80px rgba(68, 0, 255, 0.5);
+      position: relative; 
+    }
+    .gallery { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 2rem; 
+    }
+    
+    .gallery-item {
+      text-align: center; 
+      background: rgba(255, 255, 255, 0.85); 
+      border-radius: 15px; 
+      padding: 1rem; 
+      border: 1px solid rgba(255, 255, 255, 0.2); 
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 70px rgba(76, 0, 255, 0.6);
+    }
+    .gallery-item img { 
+      width: 100%; 
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px; 
+      box-shadow: 0 4px 20px rgba(76, 0, 255, 0.7); 
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+    .gallery-item p { 
+      margin-top: 1rem; 
+      font-size: 0.9rem; 
+      color: #333; 
+    }
+
+
+    /* Modal (Lightbox) */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1000; 
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0,0,0,0.9);
+        animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90vw;
+        max-height: 85vh;
+        width: auto;
+        height: auto;
+    }
+    #modalCaption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 50px;
+    }
+    .modal-content, #modalCaption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+    @keyframes zoom {
+        from {transform:scale(0)} 
+        to {transform:scale(1)}
+    }
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .close-modal:hover,
+    .close-modal:focus {
+        color: #bbb;
+        text-decoration: none;
+    }
+
+    /* --- Social & Footer --- */
+    .social-links { text-align: center; margin-top: 2rem; }
+    .social-links a { margin: 0 1rem; display: inline-block; transition: transform 0.3s ease; }
+    .social-links a:hover { transform: scale(1.2); }
+    .social-links svg { width: 40px; height: 40px; fill: white; transition: transform 0.5s ease, fill 0.5s ease; animation: bounce 2s infinite; }
+    .social-links svg:hover { transform: scale(1.3); fill: #37e2f5; }
+    footer { text-align: center; padding: 1rem; background-color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; margin-top: 2rem; border-radius: 15px; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  </style>
+
+</head>
+<body>
+  
+  <div class="liquid-background">
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+  </div>
+  
+  <section class="search-section">
+      <div class="search-container" id="searchContainer">
+          <div class="search-input-wrapper">
+              <input type="search" id="searchInput" class="search-input" placeholder="ചിത്രത്തിന്റെ നമ്പർ നൽകുക...">
+          </div>
+          <div class="search-icon-wrapper" id="searchIconWrapper">
+              <svg class="search-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 21L16.65 16.65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 6L7 4" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 6L15 4" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M11 2V4" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+          </div>
+      </div>
+  </section>
+
+  <div class="content-wrapper">
+    <header>
+      <div class="logo-container">
+        <div class="orbit-ring"></div>
+        <img src="c:\Users\ALI\Desktop\web page" class="logo">
+      </div>
+      <h1 data-text="NAHJUL HUDA DARS, ATTUR">NAHJUL HUDA DARS, ATTUR</h1>
+    </header>
+
+    <main>
+      <section class="description fade-in-section">
+        <div class="raindrop-container"></div>
+        <div class="description-content">
+            <h2 data-text="About Us">About Us</h2>
+            <p data-text="Nahjul Huda Dars is a dedicated Islamic institution focused on spreading the messages and teachings of the Quran and Sunnah through the paths of Samastha Kerala Jem-iyyathul Ulama.">
+              Nahjul Huda Dars is a dedicated Islamic institution focused on spreading
+              the messages and teachings of the Quran and Sunnah through the paths of Samastha Kerala Jem-iyyathul Ulama.
+            </p>
+        </div>
+      </section>
+
+      <section class="gallery-box fade-in-section" id="galleryBox">
+        <div class="gallery">
+           <div class="gallery-item" data-search-id="1"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG-20250704-WA0010.jpg" alt="Muharam special magazine"><p>We published muharam special megazin</p></div>
+           <div class="gallery-item" data-search-id="2"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/Copy%20of%20Designs%20(Instagram%20Portrait)_20250705_190951_0000.jpg" alt="Samastha's 99th Foundation Day Winners"><p>Winners of the competition held on Samastha's 99th Foundation Day</p></div>
+           <div class="gallery-item" data-search-id="3"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/Copy%20of%20Designs%20(Instagram%20Portrait)_20250625_180425_0000.jpg" alt="Samastha's 99th Foundation Day 2025"><p>Samastha's 99th Foundation Day in 2025</p></div>
+           <div class="gallery-item" data-search-id="4"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/WhatsApp%20Image%202025-06-04%20at%2009.05.46_a43ead27.jpg" alt="NUJOOMUL WAFA STUDENTS ASSOCIATION newspaper launch"><p>NUJOOMUL WAFA STUDENTS ASSOCIATION ൻ്റെ കീഴിൽ പുറത്തിറക്കിയ പ്രഥമ പത്രമായ "വിഭാതം" പ്രകാശനകർമ്മം നിർവഹിക്കുന്നു.</p></div>
+           <div class="gallery-item" data-search-id="5"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/ssdsf.jpg" alt="Eid-ul-Adha new clothes donation"><p>On the occasion of Eid-ul-Adha, we are giving new clothes to the relatives of our Attur Mahal.</p></div>
+           <div class="gallery-item" data-search-id="6"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/ssw.jpg" alt="Mihrajanul Funoon Mini Fest prize distribution"><p>Prizes are being distributed to those who won first, second and third places in speech and singing from the junior and senior categories at the Mihrajanul Funoon Mini Fest. Congratulations to the winners.</p></div>
+           <div class="gallery-item" data-search-id="7"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250519_211849.JPG" alt="Mihrajanul Funoon Mini Fest winners"><p>First, second and third place winners in speech and singing from junior and senior categories in mihrajanul funoon mini fest. Congratulations to the winners.</p></div>
+           <div class="gallery-item" data-search-id="8"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/SHAMNAD.A_20250519_211306_0000.jpg" alt="2025-26 Committee Members"><p>Our 2025‑26 Committee Members</p></div>
+           <div class="gallery-item" data-search-id="9"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250405_164545.JPG" alt="End of academic year trip photo 1"><p>At the end of the first academic year (2024-25), Our mahal 'attur' takes us on a journey with new clothes (PHOTO 1).</p></div>
+           <div class="gallery-item" data-search-id="10"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250405_164619.JPG" alt="End of academic year trip photo 2"><p>At the end of the first academic year (2024-25), Our mahal 'attur' takes us on a journey with new clothes (PHOTO 2).</p></div>
+           <div class="gallery-item" data-search-id="11"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG-20250215-WA0008.jpg" alt="Students of the year 2024-25"><p>Students of the year 2024‑25.</p></div>
+           <div class="gallery-item" data-search-id="12"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG-20250211-WA0002.jpg" alt="2024-25 Committee Members"><p>Our 2024‑25 Committee Members</p></div>
+           <div class="gallery-item" data-search-id="13"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250404_155330.JPG" alt="Book on Ramadan rules"><p>We have released a book containing rules for Ramadan.</p></div>
+           <div class="gallery-item" data-search-id="14"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250405_164300.JPG" alt="Trip to Thiruvananthapuram photo 1"><p>shots taken from our trip to Thiruvananthapuram.(1)</p></div>
+           <div class="gallery-item" data-search-id="15"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250405_164352.JPG" alt="Trip to Thiruvananthapuram photo 2"><p>shots taken from our trip to Thiruvananthapuram.(2)</p></div>
+           <div class="gallery-item" data-search-id="16"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250405_164215.JPG" alt="Semi-annual examination winners"><p>Those who got first, second and third positions in the semi-annual examination 1st place: Hijaz.c, Sinan.kk , 2nd place: Afnan.A , 3rd place: Shamnad.A , Ameen.K.</p></div>
+           <div class="gallery-item" data-search-id="17"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250404_155400.JPG" alt="Prophet's Day competition winners"><p>Winners of the competition held as part of the Prophet's Day program</p></div>
+           <div class="gallery-item" data-search-id="18"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/471492595_618376020619337_1268800198924982292_n.jpeg.jpg" alt="Range-level competition winners"><p>We won second place in the range-level competition.</p></div>
+           <div class="gallery-item" data-search-id="19"><img src="https://raw.githubusercontent.com/ameen8156/NAHJUL-HUDA-DARS-/main/IMG_20250405_165806.JPG" alt="Quarterly Examination winners"><p>Students who achieved high success in the 2024-25 Quarterly Examination 1st Place: Hijaz C,2nd Place:Shamil 3rd Place:Afnan.A.</p></div>
+        </div>
+      </section>
+
+      <div class="social-links fade-in-section">
+        <a href="https://www.instagram.com/nahjul_hud_dars_attur?igsh=MXY1cXJocWtsYm94aQ==" target="_blank" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/your_profile_here" target="_blank" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+        </a>
+      </div>
+
+      <footer class="fade-in-section">
+        <p>© 2024 NAHJUL HUDA DARS – All Rights Reserved</p>
+      </footer>
+    </main>
+  </div>
+  
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="modalCaption"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- ⭐ പശ്ചാത്തല ആനിമേഷൻ സ്ക്രിപ്റ്റുകൾ ---
+      const rainContainer = document.querySelector('.raindrop-container');
+      if (rainContainer) {
+        let drops = "";
+        for (let i = 0; i < 100; i++) { 
+          const left = Math.floor(Math.random() * 100);
+          const duration = Math.random() * 0.5 + 0.5;
+          const delay = Math.random() * 5;
+          const height = Math.floor(Math.random() * 30 + 10);
+          const width = 1; 
+          drops += `<div class="raindrop" style="left: ${left}%; height: ${height}px; width: ${width}px; animation-duration: ${duration}s; animation-delay: ${delay}s;"></div>`;
+        }
+        rainContainer.innerHTML = drops;
+      }
+      
+      const sections = document.querySelectorAll('.fade-in-section');
+      const options = { root: null, threshold: 0.1, rootMargin: '0px' };
+      const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) { return; }
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, options);
+      sections.forEach(section => { observer.observe(section); });
+
+      // --- ⭐ പുതിയ സെർച്ച്, മോഡൽ സ്ക്രിപ്റ്റുകൾ ---
+      const searchContainer = document.getElementById('searchContainer');
+      const searchInput = document.getElementById('searchInput');
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const captionText = document.getElementById('modalCaption');
+      const closeModal = document.querySelector('.close-modal');
+
+      // മൗസ് ഐക്കണിൽ എത്തുമ്പോൾ ഇൻപുട്ട് കാണിക്കുക
+      searchContainer.addEventListener('mouseenter', () => {
+        searchContainer.classList.add('active');
+        searchInput.focus();
+      });
+
+      // സെർച്ച് ഏരിയ വിടുമ്പോൾ ഇൻപുട്ട് മറയ്ക്കുക
+      searchContainer.addEventListener('mouseleave', () => {
+        if (document.activeElement !== searchInput) {
+            searchContainer.classList.remove('active');
+        }
+      });
+      
+      searchInput.addEventListener('blur', () => {
+          searchContainer.classList.remove('active');
+      });
+
+      // സെർച്ച് ചെയ്യാനുള്ള പ്രവർത്തനം
+      const performSearch = () => {
+        const searchTerm = searchInput.value.trim();
+        if (!searchTerm) return;
+
+        const foundItem = document.querySelector(`.gallery-item[data-search-id="${searchTerm}"]`);
+        
+        if (foundItem) {
+          const img = foundItem.querySelector('img');
+          const p = foundItem.querySelector('p');
+          
+          modal.style.display = "block";
+          modalImg.src = img.src;
+          captionText.innerHTML = p.innerHTML;
+          searchInput.value = ''; // Clear input after search
+        } else {
+          alert('ക്ഷമിക്കണം, ഈ നമ്പറിൽ ചിത്രം ലഭ്യമല്ല.');
+        }
+      };
+      
+      searchInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          performSearch();
+        }
+      });
+
+      // മോഡൽ അടക്കാനുള്ള സംവിധാനം
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // ഗാലറിയിലെ ചിത്രങ്ങളിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ മോഡൽ തുറക്കുക
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const p = item.querySelector('p');
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = p.innerHTML;
+        });
+    });
+    });
+  </script>
+</body>
+</html>
