@@ -75,10 +75,10 @@
         border-radius: 50%; /* Changed to circular */
         position: absolute; 
         top: 50%; 
-        left: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 2; 
         object-fit: contain;
-        animation: slow-spin 20s linear infinite; /* Added spinning animation */
     }
     
     .orbit-ring {
@@ -114,7 +114,6 @@
     @keyframes spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
     @keyframes spin-reverse { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(-360deg); } }
     @keyframes pulse-glow { from { opacity: 0.7; transform: translate(-50%,-50%) scale(1); } to { opacity: 1; transform: translate(-50%,-50%) scale(1.1); } }
-    @keyframes slow-spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
     /* --- ⭐ ലോഗോ ഇഫക്റ്റ് ഇവിടെ അവസാനിക്കുന്നു --- */
 
     .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
@@ -328,16 +327,24 @@
     }
     .gallery-item:hover {
       transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 70px rgba(76, 0, 255, 0.6);
+      box-shadow: 0 15px 70px #4c00ff99;
     }
-    .gallery-item img { 
-      width: 100%; 
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px; 
-      box-shadow: 0 4px 20px rgba(76, 0, 255, 0.7); 
-      transition: transform 0.4s ease;
-    }
+   .gallery-item img {
+  width: 100%;
+  height: 320px;              /* 🔹 വലുപ്പം കൂട്ടിയിരിക്കുന്നു (250 → 320px) */
+  object-fit: contain;        /* ചിത്രം മുഴുവനായും കാണും */
+  background: transparent;    /* ബാക്ക്ഗ്രൗണ്ട് കളർ ഇല്ല */
+  border-radius: 12px;
+  transition: transform 0.5s ease, box-shadow 0.4s ease;  /* 🔹 സ്മൂത്ത് ട്രാൻസിഷൻ */
+  cursor: pointer;
+}
+
+/* മൗസ് കൊണ്ടുപോകുമ്പോൾ വരുന്ന ആനിമേഷൻ */
+.gallery-item img:hover {
+  transform: scale(1.07);      /* 🔹 അല്പം വലുതായി കാണും */
+  box-shadow: 0 6px 20px rgba(37, 4, 228, 0.466);  /* ഷാഡോ ആകും */
+}
+
     .gallery-item:hover img {
         transform: scale(1.05);
     }
@@ -417,8 +424,22 @@
     footer { text-align: center; padding: 1rem; background-color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; margin-top: 2rem; border-radius: 15px; }
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
+    @media (max-width: 640px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
 </head>
 <body>
   
@@ -493,7 +514,7 @@
       </section>
 
       <div class="social-links fade-in-section">
-        <a href="https://www.instagram.com/nahjul_hud_dars_attur?igsh=MXY1cXJocWtsYm94aQ==" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/nahjul_huda_dars_attur?igsh=eDUxNXJkMm54ZnVn" target="_blank" aria-label="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
         </a>
         <a href="https://www.facebook.com/your_profile_here" target="_blank" aria-label="Facebook">
