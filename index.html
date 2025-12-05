@@ -331,13 +331,17 @@
     }
    .gallery-item img {
   width: 100%;
-  height: 320px;              /* 🔹 വലുപ്പം കൂട്ടിയിരിക്കുന്നു (250 → 320px) */
-  object-fit: contain;        /* ചിത്രം മുഴുവനായും കാണും */
-  background: transparent;    /* ബാക്ക്ഗ്രൗണ്ട് കളർ ഇല്ല */
+  height: auto;           /* 🔥 fixed height remove ചെയ്തു */
+  max-height: 320px;      /* 🔥 box ഉള്ളിൽ പരിധി */
+  object-fit: contain;
+  background: transparent;
   border-radius: 12px;
-  transition: transform 0.5s ease, box-shadow 0.4s ease;  /* 🔹 സ്മൂത്ത് ട്രാൻസിഷൻ */
+  display: block;         /* 🔥 extra spacing remove ചെയ്യുന്നു */
+  margin: 0 auto;         /* 🔥 ചിത്രം box-ന്റെ center */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
   cursor: pointer;
 }
+
 
 /* മൗസ് കൊണ്ടുപോകുമ്പോൾ വരുന്ന ആനിമേഷൻ */
 .gallery-item img:hover {
