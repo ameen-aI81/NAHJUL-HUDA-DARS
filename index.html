@@ -1,441 +1,1061 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NAHJUL HUDA DARS</title>
-  
-  <!-- Favicon Links -->
-  <link rel="icon" type="image/png" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon-96x96.png" sizes="96x96" />
+
+  <!-- Premium Fonts and Favicon Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Manjari:wght@400;700&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon-96x96.png"
+    sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon.svg" />
   <link rel="shortcut icon" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/apple-touch-icon.png" />
   <link rel="manifest" href="https://ameen8156.github.io/NAHJUL-HUDA-DARS-/site.webmanifest" />
 
   <style>
-    
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0c0c1e; /* Darker background */
-      color: rgb(0, 0, 0);
+      font-family: 'Outfit', 'Manjari', sans-serif;
+      font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: linear-gradient(135deg, #0b0f19 0%, #1a1625 100%);
+      background-attachment: fixed;
+      color: #eaeaea;
       overflow-x: hidden;
       position: relative;
     }
 
     /* --- ⭐ പൂർണ്ണ പശ്ചാത്തല ആനിമേഷൻ ⭐ --- */
     .liquid-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
     }
 
-    .blob {
-        position: absolute;
-        background: linear-gradient(180deg, #6843ee, #b7099a);
-        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        animation: move-blob 20s infinite ease-in-out alternate;
-        opacity: 0.5; /* Slightly more subtle */
+    .blob:nth-child(1) {
+      width: 28vw;
+      height: 28vw;
+      top: -10vh;
+      left: -15vw;
+      background: radial-gradient(circle at center, rgba(0, 210, 255, 0.15) 0%, transparent 60%);
+      animation-duration: 22s;
     }
 
-    .blob:nth-child(1) { width: 28vw; height: 28vw; top: -10vh; left: -15vw; animation-duration: 22s; }
-    .blob:nth-child(2) { width: 24vw; height: 24vw; bottom: -15vh; right: -20vw; animation-duration: 28s; animation-direction: alternate-reverse; }
-    .blob:nth-child(3) { width: 22vw; height: 22vw; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 18s; }
-    .blob:nth-child(4) { width: 26vw; height: 26vw; top: 20vh; right: -10vw; animation-duration: 25s; }
-    .blob:nth-child(5) { width: 20vw; height: 20vw; bottom: 5vh; left: 10vw; animation-duration: 20s; animation-direction: alternate-reverse; }
-    
+    .blob:nth-child(2) {
+      width: 24vw;
+      height: 24vw;
+      bottom: -15vh;
+      right: -20vw;
+      background: radial-gradient(circle at center, rgba(203, 108, 230, 0.15) 0%, transparent 60%);
+      animation-duration: 28s;
+      animation-direction: alternate-reverse;
+    }
+
+    .blob:nth-child(3) {
+      width: 22vw;
+      height: 22vw;
+      top: 50%;
+      left: 50%;
+      background: radial-gradient(circle at center, rgba(0, 210, 255, 0.1) 0%, transparent 60%);
+      transform: translate(-50%, -50%);
+      animation-duration: 18s;
+    }
+
+    .blob:nth-child(4) {
+      width: 26vw;
+      height: 26vw;
+      top: 20vh;
+      right: -10vw;
+      animation-duration: 25s;
+    }
+
+    .blob:nth-child(5) {
+      width: 20vw;
+      height: 20vw;
+      bottom: 5vh;
+      left: 10vw;
+      animation-duration: 20s;
+      animation-direction: alternate-reverse;
+    }
+
     @keyframes move-blob {
-      0%   { transform: translate(0, 0) rotate(0deg); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-      100% { transform: translate(30vw, 40vh) rotate(360deg); border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
+      0% {
+        transform: translate(0, 0);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      }
+
+      100% {
+        transform: translate(15vw, 20vh);
+        border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+      }
     }
-    
-    .content-wrapper { padding: 20px; position: relative; z-index: 1; }
-    header { text-align: center; padding: 2rem 1rem; min-height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-    header h1 { 
-        color: #ffffff; 
-        text-shadow: 0 0 15px rgba(0,0,0,0.5); 
-        font-size: 2.8rem;
-        position: relative;
+
+    .content-wrapper {
+      padding: 20px;
+      position: relative;
+      z-index: 1;
     }
-    
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      /* white-space: nowrap; - removed for medium sizing */
+      background: linear-gradient(135deg, #fff 0%, #00f2fe 33%, #cb6ce6 66%, #00f2fe 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 60px rgba(0, 242, 254, 0.8));
+      animation: gradient-flow 2s linear infinite, reveal-shimmer 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, neon-glow 1.5s ease-in-out infinite alternate;
+      opacity: 0;
+      transform: translateY(40px);
+      will-change: transform, opacity, filter;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 10vw;
+        letter-spacing: -0.01em;
+        white-space: normal;
+        /* Allow wrapping on very small screens if needed */
+        text-align: center;
+      }
+
+      header {
+        min-height: 40vh;
+        padding: 1rem;
+      }
+
+      .logo-container {
+        width: 100px;
+        height: 100px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .orbit-ring {
+        width: 90px;
+        height: 90px;
+      }
+
+      .orbit-ring::before {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    @keyframes neon-glow {
+      from {
+        filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.4));
+      }
+
+      to {
+        filter: drop-shadow(0 0 30px rgba(203, 108, 230, 0.6));
+      }
+    }
+
+    @keyframes reveal-shimmer {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: #4facfe
+      }
+    }
+
+    @keyframes gradient-flow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    @keyframes slide-up-fade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* --- ⭐ പ്രീമിയം ലോഗോ ഇഫക്റ്റ് ⭐ --- */
-    .logo-container { 
-        position: relative; 
-        width: 150px; 
-        height: 150px; 
-        margin: 0 auto 1rem; 
+    .logo-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1.5rem;
     }
-    .logo { 
-        width: 100px; 
-        height: 100px; 
-        border-radius: 50%; /* Changed to circular */
-        position: absolute; 
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2; 
-        object-fit: contain;
+
+    .logo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-    
+
     .orbit-ring {
-        position: absolute;
-        width: 130px; height: 130px;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: conic-gradient(from 90deg, transparent 0%, transparent 70%, #00e5ff 100%);
-        animation: spin 3s linear infinite;
-        z-index: 1;
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      z-index: 1;
+      animation: gentle-spin 10s linear infinite;
     }
-    .orbit-ring::before, .orbit-ring::after {
-        content: '';
-        position: absolute;
-        border-radius: 50%;
-    }
+
     .orbit-ring::before {
-        width: 150px; height: 150px;
-        top: 50%; left: 50%;
-        transform: translate(-50%,-50%);
-        background: conic-gradient(from 270deg, transparent 0%, transparent 80%, #e040fb 100%);
-        animation: spin-reverse 4s linear infinite;
+      content: '';
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px dashed rgba(224, 64, 251, 0.3);
+      animation: gentle-spin-reverse 15s linear infinite;
     }
-    .orbit-ring::after {
-        width: 110px; height: 110px;
-        top: 50%; left: 50%;
-        transform: translate(-50%,-50%);
-        background: radial-gradient(circle, rgba(224, 64, 251, 0.3) 0%, rgba(224, 64, 251, 0) 60%);
-        animation: pulse-glow 2s infinite alternate;
+
+    @keyframes gentle-spin {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
     }
-    
-    @keyframes spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
-    @keyframes spin-reverse { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(-360deg); } }
-    @keyframes pulse-glow { from { opacity: 0.7; transform: translate(-50%,-50%) scale(1); } to { opacity: 1; transform: translate(-50%,-50%) scale(1.1); } }
+
+    @keyframes gentle-spin-reverse {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+      }
+    }
+
     /* --- ⭐ ലോഗോ ഇഫക്റ്റ് ഇവിടെ അവസാനിക്കുന്നു --- */
 
-    .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
-    .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: transform, opacity;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* --- ⭐ "About Us" ബോക്സ് --- */
     .description {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 3rem;
-      border-radius: 35px;
+      padding: 3.5rem;
+      border-radius: 60px;
       position: relative;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: transform 0.4s ease, border-color 0.4s ease;
     }
-    
-    .raindrop-container {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: 1;
-        overflow: hidden;
+
+    .description:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.15);
     }
-    .raindrop {
-        position: absolute;
-        background: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.3));
-        border-radius: 1px 1px 10px 10px;
-        animation: fall linear infinite;
+
+    .glow-mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      opacity: 0.6;
     }
-    @keyframes fall {
-        to {
-            transform: translateY(110vh);
-        }
+
+    .mesh-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: mesh-move linear infinite;
     }
-    
+
+    .blob-1 {
+      width: 300px;
+      height: 300px;
+      background: rgba(0, 242, 254, 0.2);
+      top: -100px;
+      left: -100px;
+      animation-duration: 20s;
+    }
+
+    .blob-2 {
+      width: 250px;
+      height: 250px;
+      background: rgba(203, 108, 230, 0.15);
+      bottom: -80px;
+      right: -80px;
+      animation-duration: 25s;
+      animation-direction: reverse;
+    }
+
+    .blob-3 {
+      width: 200px;
+      height: 200px;
+      background: rgba(79, 172, 254, 0.15);
+      top: 50%;
+      left: 50%;
+      animation-duration: 18s;
+    }
+
+    @keyframes mesh-move {
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(100px, 50px) scale(1.2) rotate(120deg);
+      }
+
+      66% {
+        transform: translate(-50px, 100px) scale(0.8) rotate(240deg);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1) rotate(360deg);
+      }
+    }
+
     .description-content {
-        position: relative;
-        z-index: 2;
-    }
-    
-    .description h2, .description p {
       position: relative;
-      color: #ffffff;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+      z-index: 2;
     }
-    .description h2 { font-size: 2.5rem; }
-    .description p { font-size: 1.1rem; line-height: 1.6; }
 
-    /* മാഗ്നിഫയിംഗ് ഇഫക്റ്റ് */
-    header h1::after,
-    .description h2::after, .description p::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        color: white;
-        transform: scale(1.1);
-        filter: brightness(1.5);
-        mask-image: radial-gradient(circle at 50% 50%, white 20px, transparent 80px);
-        mask-size: 100px 100px;
-        mask-repeat: no-repeat;
-        animation: magnify-text 6s infinite ease-in-out;
+    .description h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #fff, #37e2f5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      text-align: left;
+      width: 100%;
     }
-    header h1::after { animation-duration: 7s; }
-    .description p::after { animation-duration: 8s; animation-delay: 1s; }
 
-    @keyframes magnify-text {
-      0% { mask-position: -10% 20%; }
-      50% { mask-position: 110% 70%; }
-      100% { mask-position: -10% 20%; }
+    .description.is-visible h2 {
+      opacity: 1;
+      transform: translateX(0);
     }
+
+    .description p {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s;
+      text-align: left;
+      will-change: transform, opacity;
+    }
+
+    .description.is-visible p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .description {
+        padding: 2rem;
+        border-radius: 30px;
+        margin: 1.5rem;
+      }
+
+      .description h2 {
+        font-size: 1.8rem;
+      }
+
+      .description p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* --- ⭐ Spotlight Text Effect ⭐ --- */
+    .spotlight-text {
+      position: relative;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0.6) 40%,
+          rgba(255, 255, 255, 0.4) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: background 0.1s ease;
+    }
+
+    /* മാഗ്നിഫയിംഗ് ഇഫക്റ്റ് - removed the old complex masking and kept premium text styles */
 
     /* --- ⭐ AI Search UI --- */
-    .search-section {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        z-index: 100;
-    }
-    .search-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-    .search-icon-wrapper {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 50%;
-        transition: transform 0.3s ease;
-        overflow: hidden; /* For gradient animation */
-    }
-    .search-icon-wrapper:hover {
-        transform: scale(1.1);
-    }
-    .search-icon-wrapper::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 150%;
-        height: 150%;
-        background: conic-gradient(transparent, #37b9f569, #b7099a, #6843ee, transparent 40%);
-        animation: spin-search 3s linear infinite;
-    }
-    @keyframes spin-search {
-        from { transform: translate(-50%, -50%) rotate(0deg); }
-        to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-    .search-icon-wrapper::after {
-        content: '';
-        position: absolute;
-        inset: 3px;
-        background: #13133a65; /* Match body background */
-        border-radius: 50%;
-    }
-    .search-icon {
-        width: 24px;
-        height: 24px;
-        color: white;
-        position: relative;
-        z-index: 1; /* Above the gradient background */
-        stroke-width: 2;
-    }
 
-    .search-input-wrapper {
-        position: relative;
-        width: 0;
-        opacity: 0;
-        transition: width 0.4s ease, opacity 0.2s ease;
-        border-radius: 50px;
-        overflow: hidden;
-        margin-right: -50px; /* Overlap icon */
-    }
-    .search-input-wrapper::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200%; /* Wider for a smooth gradient */
-        height: 300%;
-        background: linear-gradient(90deg, #b7099a, #6843ee, #37e2f5);
-        animation: move-gradient 4s linear infinite;
-    }
-    @keyframes move-gradient {
-        from { transform: translate(-50%, -50%) translateX(-25%); }
-        to { transform: translate(-50%, -50%) translateX(25%); }
-    }
-    .search-input-wrapper::after {
-        content: '';
-        position: absolute;
-        inset: 2px;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 50px;
-    }
-    .search-input {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 50px;
-        padding: 12px 60px 12px 25px;
-        font-size: 1rem;
-        border: none;
-        background: transparent;
-        color: white;
-        outline: none;
-        box-sizing: border-box;
-    }
-    .search-container.active .search-input-wrapper {
-        width: 350px;
-        opacity: 1;
-    }
-    
-    /* --- ⭐ Gallery & Modal --- */
+
+    /* --- ⭐ New Alternating Gallery Sections ⭐ --- */
     .gallery-box {
       max-width: 1200px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: rgba(15, 6, 65, 0.4); 
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .gallery-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6rem;
+      margin-bottom: 8rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+
+    .gallery-section.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .gallery-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .gallery-text {
+      flex: 1;
+      max-width: 450px;
+    }
+
+    .gallery-text h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #fff, #4facfe);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: left;
+    }
+
+    .gallery-text p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+      text-align: left;
+    }
+
+    .gallery-image-container {
+      position: relative;
       border-radius: 30px;
-      box-shadow: 0 0 80px rgba(68, 0, 255, 0.5);
-      position: relative; 
-    }
-    .gallery { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: 2rem; 
-    }
-    
-    .gallery-item {
-      text-align: center; 
-      background: rgba(255, 255, 255, 0.85); 
-      border-radius: 15px; 
-      padding: 1rem; 
-      border: 1px solid rgba(255, 255, 255, 0.2); 
       overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
       cursor: pointer;
+      background: #000;
+      width: fit-content;
+      /* Tightly wraps image */
+      max-width: 100%;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
     }
-    .gallery-item:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 70px #4c00ff99;
+
+    .gallery-image-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 255, 255, 0.4) 0%,
+          transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 2;
     }
-   .gallery-item img {
-  width: 100%;
-  height: auto;           /* 🔥 fixed height remove ചെയ്തു */
-  max-height: 320px;      /* 🔥 box ഉള്ളിൽ പരിധി */
-  object-fit: contain;
-  background: transparent;
-  border-radius: 12px;
-  display: block;         /* 🔥 extra spacing remove ചെയ്യുന്നു */
-  margin: 0 auto;         /* 🔥 ചിത്രം box-ന്റെ center */
-  transition: transform 0.5s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-}
 
-
-/* മൗസ് കൊണ്ടുപോകുമ്പോൾ വരുന്ന ആനിമേഷൻ */
-.gallery-item img:hover {
-  transform: scale(1.07);      /* 🔹 അല്പം വലുതായി കാണും */
-  box-shadow: 0 6px 20px rgba(37, 4, 228, 0.466);  /* ഷാഡോ ആകും */
-}
-
-    .gallery-item:hover img {
-        transform: scale(1.05);
+    .gallery-image-container:hover::after {
+      opacity: 1;
     }
-    .gallery-item p { 
-      margin-top: 1rem; 
-      font-size: 0.9rem; 
-      color: #333; 
+
+    .gallery-image-container:hover {
+      transform: scale(1.03) translateY(-10px);
+      box-shadow: 0 40px 80px rgba(0, 210, 255, 0.2);
+    }
+
+    .gallery-image-container:hover::after {
+      opacity: 0.2;
+    }
+
+    .gallery-image-container img {
+      display: block;
+      width: auto;
+      /* Allow image to dictate width */
+      max-width: 100%;
+      height: auto;
+      max-height: 85vh;
+      object-fit: contain;
+      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .gallery-image-container:hover img {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 992px) {
+
+      .gallery-section,
+      .gallery-section:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        margin-bottom: 6rem;
+      }
+
+      .gallery-text {
+        max-width: 100%;
+      }
+
+      .gallery-text h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-text p {
+        font-size: 1.1rem;
+      }
+
+      .gallery-section {
+        margin-bottom: 4rem;
+        gap: 1.5rem;
+      }
     }
 
 
     /* Modal (Lightbox) */
     .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1000; 
-        padding-top: 50px;
-        left: 0;
-        top: 0;
-        width: 100%; 
-        height: 100%; 
-        overflow: auto; 
-        background-color: rgba(0,0,0,0.9);
-        animation: fadeIn 0.5s;
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.5s;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
+
     .modal-content {
-        margin: auto;
-        display: block;
-        max-width: 90vw;
-        max-height: 85vh;
-        width: auto;
-        height: auto;
+      margin: auto;
+      display: block;
+      max-width: 90vw;
+      max-height: 85vh;
+      width: auto;
+      height: auto;
     }
+
     #modalCaption {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        text-align: center;
-        color: #ccc;
-        padding: 10px 0;
-        height: 50px;
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 50px;
     }
-    .modal-content, #modalCaption {
-        animation-name: zoom;
-        animation-duration: 0.6s;
+
+    .modal-content,
+    #modalCaption {
+      animation-name: zoom;
+      animation-duration: 0.6s;
     }
+
     @keyframes zoom {
-        from {transform:scale(0)} 
-        to {transform:scale(1)}
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
     }
+
     .close-modal {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
     }
+
     .close-modal:hover,
     .close-modal:focus {
-        color: #bbb;
-        text-decoration: none;
+      color: #bbb;
+      text-decoration: none;
     }
 
-    /* --- Social & Footer --- */
-    .social-links { text-align: center; margin-top: 2rem; }
-    .social-links a { margin: 0 1rem; display: inline-block; transition: transform 0.3s ease; }
-    .social-links a:hover { transform: scale(1.2); }
-    .social-links svg { width: 40px; height: 40px; fill: white; transition: transform 0.5s ease, fill 0.5s ease; animation: bounce 2s infinite; }
-    .social-links svg:hover { transform: scale(1.3); fill: #37e2f5; }
-    footer { text-align: center; padding: 1rem; background-color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; margin-top: 2rem; border-radius: 15px; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    /* --- Social SideBar --- */
+    .social-links {
+      position: fixed;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      z-index: 1000;
+      padding: 1.5rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
 
-    @media (max-width: 640px) {
-      .gallery {
-        grid-template-columns: 1fr;
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .social-links a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .social-links a:hover::before {
+      opacity: 1;
+    }
+
+    .social-links a.instagram:hover {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      box-shadow: 0 0 20px rgba(220, 39, 67, 0.5);
+      transform: scale(1.15) translateX(-5px);
+    }
+
+    .social-links a.facebook:hover {
+      background: #1877F2;
+      box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+      transform: scale(1.15) translateX(-5px);
+    }
+
+    .social-links a.whatsapp:hover {
+      background: #25D366;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+      transform: scale(1.15) translateX(-5px);
+    }
+
+    .social-links a.contact {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .social-links a.contact:hover {
+      background: #1877F2;
+      box-shadow: 0 0 25px rgba(24, 119, 242, 0.6);
+      transform: scale(1.15) translateX(-5px) rotate(-5deg);
+    }
+
+    .social-links a.maps {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .social-links a.maps:hover {
+      background: linear-gradient(45deg, #ea4335, #4285f4, #34a853, #fbbc05);
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease infinite;
+      box-shadow: 0 0 25px rgba(234, 67, 53, 0.6);
+      transform: scale(1.15) translateX(-5px) rotate(5deg);
+    }
+
+    @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .social-links svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover svg {
+      transform: scale(1.1);
+    }
+
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(234, 67, 53, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(234, 67, 53, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(234, 67, 53, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .social-links {
+        right: 10px;
+        padding: 0.8rem 0.5rem;
+      }
+
+      .social-links svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    /* --- ⭐ Navigation Menu --- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(10, 10, 30, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 2000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0 10%;
+      box-sizing: border-box;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+        padding: 0 5%;
+        height: 60px;
+      }
+    }
+
+    nav.nav-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    nav .nav-brand {
+      position: absolute;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .mini-logo {
+      height: 45px;
+      width: auto;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .mini-logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav .nav-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #37e2f5;
+      transition: width 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: #37e2f5;
+    }
+
+    nav .nav-links a:hover::after {
+      width: 100%;
+    }
+
+
+    /* --- ⭐ Contact Section --- */
+    .contact-section {
+      max-width: 900px;
+      margin: 6rem auto;
+      padding: 4rem 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(24px);
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      position: relative;
+    }
+
+    .contact-section h2 {
+      font-size: 2.22rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, #fff, #37e2f5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: left;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-card {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      min-width: 200px;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .contact-card:hover::before {
+      opacity: 1;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-card svg {
+      width: 40px;
+      height: 40px;
+      fill: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover svg {
+      fill: #1877F2;
+      filter: drop-shadow(0 0 10px rgba(24, 119, 242, 0.8));
+    }
+
+    .contact-card p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: white;
+      padding: 18px 35px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    @media (max-width: 768px) {
+      nav .nav-brand {
+        display: none;
+      }
+
+      nav .nav-links {
+        gap: 1.5rem;
+      }
+
+      nav .nav-links a {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+      }
+
+      .contact-section h2 {
+        font-size: 2.22rem;
+      }
+
+      .search-section {
+        right: 15px;
+      }
+
+      nav .nav-links {
+        gap: 1.2rem;
+      }
+
+      nav .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .contact-section {
+        padding: 2.5rem 1.5rem;
+        margin: 3rem 1rem;
+        border-radius: 30px;
+      }
+
+      .contact-card p {
+        font-size: 1rem;
+      }
+
+      .whatsapp-btn {
+        padding: 15px 25px;
+        font-size: 1rem;
       }
     }
   </style>
 
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
@@ -445,32 +1065,63 @@
 }
 </script>
 </head>
+
 <body>
-  
-  <div class="liquid-background">
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
+  <nav>
+    <a href="#" class="nav-brand"><img src="logo.png.jpg" alt="Logo" class="mini-logo"></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <div class="social-links">
+    <a href="https://www.instagram.com/nahjul_huda_dars_attur?igsh=eDUxNXJkMm54ZnVn" target="_blank" class="instagram"
+      aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path
+          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/search/top/?q=nahjul%20huda%20dars%20attur" target="_blank" class="facebook"
+      aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path
+          d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" />
+      </svg>
+    </a>
+    <a href="https://wa.me/917994896533" target="_blank" class="whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.42 3.63 2.42 5.82 0 4.54-3.7 8.24-8.24 8.24-1.51 0-2.99-.41-4.28-1.19l-.31-.18-3.18.84.85-3.09-.2-.32c-.85-1.36-1.31-2.94-1.31-4.57.01-4.54 3.7-8.24 8.24-8.24m-3.41 4.69c-.19 0-.44.07-.67.33-.23.26-.88.86-.88 2.08 0 1.22.89 2.39 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.07-.1-.23-.16-.48-.28-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.83-.8 1-.15.17-.3.19-.54.07-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.15-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.23.23-.39.07-.16.04-.3-.02-.43-.07-.13-.67-1.61-.92-2.21-.24-.59-.49-.51-.67-.51z" />
+      </svg>
+    </a>
+    <a href="tel:+917994896533" class="contact" aria-label="Contact">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+      </svg>
+    </a>
+    <a href="https://maps.app.goo.gl/TVZSF7A5BuitHkzTA" target="_blank" class="maps pulse-animation"
+      aria-label="Location">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+      </svg>
+    </a>
   </div>
-  
-  <section class="search-section">
-      <div class="search-container" id="searchContainer">
-          <div class="search-input-wrapper">
-              <input type="search" id="searchInput" class="search-input" placeholder="ചിത്രത്തിന്റെ നമ്പർ നൽകുക...">
-          </div>
-          <div class="search-icon-wrapper" id="searchIconWrapper">
-              <svg class="search-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M21 21L16.65 16.65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M6 6L7 4" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M16 6L15 4" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M11 2V4" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-          </div>
-      </div>
-  </section>
+
+  <div class="liquid-background">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+
 
   <div class="content-wrapper">
     <header>
@@ -482,66 +1133,312 @@
     </header>
 
     <main>
-      <section class="description fade-in-section">
-        <div class="raindrop-container"></div>
+      <section id="about" class="description fade-in-section">
+        <div class="glow-mesh">
+          <div class="mesh-blob blob-1"></div>
+          <div class="mesh-blob blob-2"></div>
+          <div class="mesh-blob blob-3"></div>
+        </div>
         <div class="description-content">
-            <h2 data-text="About Us">About Us</h2>
-            <p data-text="Nahjul Huda Dars is a dedicated Islamic institution focused on spreading the messages and teachings of the Quran and Sunnah through the paths of Samastha Kerala Jem-iyyathul Ulama.">
-              Nahjul Huda Dars is a dedicated Islamic institution focused on spreading
-              the messages and teachings of the Quran and Sunnah through the paths of Samastha Kerala Jem-iyyathul Ulama.
+          <h2 data-text="About Us">About Us</h2>
+          <p class="spotlight-text"
+            data-text="Nahjul Huda Dars is a dedicated Islamic institution focused on spreading the messages and teachings of the Quran and Sunnah through the paths of Samastha Kerala Jem-iyyathul Ulama.">
+            Nahjul Huda Dars is a dedicated Islamic institution focused on spreading
+            the messages and teachings of the Quran and Sunnah through the paths of Samastha Kerala Jem-iyyathul Ulama.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery-box" id="galleryBox">
+        <!-- Section 1 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="1">
+          <div class="gallery-text">
+            <h3>Academic Journey</h3>
+            <p class="spotlight-text">At the end of the second academic year (2025-26), Our mahal 'attur' takes us on a
+              journey with new
+              clothes.</p>
+          </div>
+          <div class="gallery-image-container"><img src="photo-collage.png.png"></div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="2">
+          <div class="gallery-text">
+            <h3>Mysore Souls</h3>
+            <p class="spotlight-text">The beauty of Mysore captured with beautiful souls.</p>
+          </div>
+          <div class="gallery-image-container"><img src="photo-collage.png (2).png"></div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="3">
+          <div class="gallery-text">
+            <h3>Heart of Mysore</h3>
+            <p class="spotlight-text">Memories made together in the heart of Mysore.</p>
+          </div>
+          <div class="gallery-image-container"><img src="photo-collage.png.png"></div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="4">
+          <div class="gallery-text">
+            <h3>Mysore Trip</h3>
+            <p class="spotlight-text">Shots taken from our trip to Mysore.</p>
+          </div>
+          <div class="gallery-image-container"><img src="photo-collage.png (1).png"></div>
+        </div>
+
+        <!-- Section 10 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="5">
+          <div class="gallery-text">
+            <h3>അഭിനന്ദനങ്ങൾ</h3>
+            <p class="spotlight-text">NSS മുളളൂർക്കര സ്‌കൂളിലെ എട്ടാം തരം ഓണപ്പരീക്ഷയിൽ ഒന്നും രണ്ടും സ്‌ഥാനം നേടിയ
+              മിസ്ബാഹിനേയും യാസീൻ
+              അബ്ദുല്ലയേയും ആദരിക്കുന്നു.</p>
+          </div>
+          <div class="gallery-image-container"><img src="1st web school.jpg"></div>
+        </div>
+
+        <!-- Section 11 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="6">
+          <div class="gallery-text">
+            <h3>Juniors Achievement</h3>
+            <p class="spotlight-text">2025-26 അദ്ധ്യായന വർഷത്തെ അർദ്ധ വാർഷിക പരീക്ഷയിൽ ഉയർന്ന സ്‌ഥാനം നേടിയവർ (juniors).
             </p>
+          </div>
+          <div class="gallery-image-container"><img src="1st web junio.jpg"></div>
         </div>
-      </section>
 
-      <section class="gallery-box fade-in-section" id="galleryBox">
-        <div class="gallery">
-          <div class="gallery-item" data-search-id="1"><img src="photo-collage.png (2).png"><p>The beauty of Mysore captured with beautiful souls.</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="photo-collage.png.png"><p>Memories made together in the heart of Mysore.</p></div>
-           <div class="gallery-item" data-search-id="1"><img src="photo-collage.png (1).png"><p>shots taken from our trip to Mysore</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="1st web school.jpg"><p>NSS മുളളൂർക്കര സ്‌കൂളിലെ എട്ടാം തരം ഓണപ്പരീക്ഷയിൽ ഒന്നും രണ്ടും സ്‌ഥാനം നേടിയ മിസ്ബാഹിനേയും യാസീൻ അബ്ദുല്ലയേയും ആദരിക്കുന്നു. വിജയികൾക്ക് അഭിനന്ദനങ്ങൾ.....</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="1st web junio.jpg"><p>2025-26 അദ്ധ്യായന വർഷത്തെ അർദ്ധ വാർഷിക പരീക്ഷയിൽ ഉയർന്ന സ്‌ഥാനം നേടിയവർ (juniors)</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="image collage for web1.jpg"><p>2025-26 അദ്ധ്യായന വർഷത്തെ അർദ്ധ വാർഷിക പരീക്ഷയിൽ ഉയർന്ന സ്‌ഥാനം നേടിയവർ (seniors)</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="fhfnfxg.png"><p>our Graphics service</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="3.png"><p>NSS മുള്ളൂർക്കര സ്‌കൂളിൽ നടന്ന കലോത്സവത്തിൽ ഖിറാഅത്ത് മത്സരത്തിൽ 1-ാം സ്‌ഥാനം നേടിയ മിസ്ബാഹുൽ ഹഖ്</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="1.jpg"><p>NSS മുള്ളൂർക്കര സ്‌കൂളിൽ നടന്ന കലോത്സവത്തിൽ ചിത്രരചനയിൽ 1-ാം സ്‌ഥാനവും 3-ാം സ്‌ഥാനവും നേടിയ മിസ്ബാഹുൽ ഹഖും യാസീൻ അബ്ദുല്ലയും</p></div>
-          <div class="gallery-item" data-search-id="1"><img src="ബ.png"><p>NSS മുള്ളൂർക്കര സ്‌കൂളിലെ 8-ാം തരം ഓണപ്പരീക്ഷയിൽ 1-ാം സ്‌ഥാനവും 2-ാം സ്‌ഥാനവും നേടി ദർസിൻ്റെ അഭിമാന സന്തതികളായ മിസ്ബാഹുൽ ഹഖും യാസീൻ അബ്ദുല്ലയും</p></div>
-           <div class="gallery-item" data-search-id="1"><img src="IMG-20250704-WA0010.jpg"><p>We published muharam special megazin</p></div>
-           <div class="gallery-item" data-search-id="2"><img src="Copy of Designs (Instagram Portrait)_20250705_190951_0000.jpg" alt="Samastha's 99th Foundation Day Winners"><p>Winners of the competition held on Samastha's 99th Foundation Day</p></div>
-           <div class="gallery-item" data-search-id="3"><img src="Copy of Designs (Instagram Portrait)_20250625_180425_0000.jpg" alt="Samastha's 99th Foundation Day 2025"><p>Samastha's 99th Foundation Day in 2025</p></div>
-           <div class="gallery-item" data-search-id="4"><img src="WhatsApp Image 2025-06-04 at 09.05.46_a43ead27.jpg" alt="NUJOOMUL WAFA STUDENTS ASSOCIATION newspaper launch"><p>NUJOOMUL WAFA STUDENTS ASSOCIATION ൻ്റെ കീഴിൽ പുറത്തിറക്കിയ പ്രഥമ പത്രമായ "വിഭാതം" പ്രകാശനകർമ്മം നിർവഹിക്കുന്നു.</p></div>
-           <div class="gallery-item" data-search-id="5"><img src="IMG_20250405_164619.JPG"><p>On the occasion of Eid-ul-Adha, we are giving new clothes to the relatives of our Attur Mahal.</p></div>
-           <div class="gallery-item" data-search-id="6"><img src="ssdsf.jpg"><p>Prizes are being distributed to those who won first, second and third places in speech and singing from the junior and senior categories at the Mihrajanul Funoon Mini Fest. Congratulations to the winners.</p></div>
-           <div class="gallery-item" data-search-id="7"><img src="IMG_20250519_211849.JPG" alt="Mihrajanul Funoon Mini Fest winners"><p>First, second and third place winners in speech and singing from junior and senior categories in mihrajanul funoon mini fest. Congratulations to the winners.</p></div>
-           <div class="gallery-item" data-search-id="8"><img src="SHAMNAD.A_20250519_211306_0000.jpg" alt="2025-26 Committee Members"><p>Our 2025‑26 Committee Members</p></div>
-           <div class="gallery-item" data-search-id="9"><img src="IMG_20250405_164545.JPG" alt="End of academic year trip photo 1"><p>At the end of the first academic year (2024-25), Our mahal 'attur' takes us on a journey with new clothes (PHOTO 1).</p></div>
-           <div class="gallery-item" data-search-id="10"><img src="IMG_20250405_164619.JPG" alt="End of academic year trip photo 2"><p>At the end of the first academic year (2024-25), Our mahal 'attur' takes us on a journey with new clothes (PHOTO 2).</p></div>
-           <div class="gallery-item" data-search-id="11"><img src="IMG-20250215-WA0008.jpg" alt="Students of the year 2024-25"><p>Students of the year 2024‑25.</p></div>
-           <div class="gallery-item" data-search-id="12"><img src="IMG-20250211-WA0002.jpg" alt="2024-25 Committee Members"><p>Our 2024‑25 Committee Members</p></div>
-           <div class="gallery-item" data-search-id="13"><img src="IMG_20250404_155330.JPG" alt="Book on Ramadan rules"><p>We have released a book containing rules for Ramadan.</p></div>
-           <div class="gallery-item" data-search-id="14"><img src="IMG_20250405_164300.JPG" alt="Trip to Thiruvananthapuram photo 1"><p>shots taken from our trip to Thiruvananthapuram.(1)</p></div>
-           <div class="gallery-item" data-search-id="15"><img src="IMG_20250405_164352.JPG" alt="Trip to Thiruvananthapuram photo 2"><p>shots taken from our trip to Thiruvananthapuram.(2)</p></div>
-           <div class="gallery-item" data-search-id="16"><img src="IMG_20250405_164215.JPG" alt="Semi-annual examination winners"><p>Those who got first, second and third positions in the semi-annual examination 1st place: Hijaz.c, Sinan.kk , 2nd place: Afnan.A , 3rd place: Shamnad.A , Ameen.K.</p></div>
-           <div class="gallery-item" data-search-id="17"><img src="IMG_20250404_155400.JPG" alt="Prophet's Day competition winners"><p>Winners of the competition held as part of the Prophet's Day program</p></div>
-           <div class="gallery-item" data-search-id="18"><img src="471492595_618376020619337_1268800198924982292_n.jpeg.jpg" alt="Range-level competition winners"><p>We won second place in the range-level competition.</p></div>
-           <div class="gallery-item" data-search-id="19"><img src="IMG_20250405_165806.JPG" alt="Quarterly Examination winners"><p>Students who achieved high success in the 2024-25 Quarterly Examination 1st Place: Hijaz C,2nd Place:Shamil 3rd Place:Afnan.A.</p></div>
+        <!-- Section 12 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="7">
+          <div class="gallery-text">
+            <h3>Seniors Pride</h3>
+            <p class="spotlight-text">2025-26 അദ്ധ്യായന വർഷത്തെ അർദ്ധ വാർഷിക പരീക്ഷയിൽ ഉയർന്ന സ്‌ഥാനം നേടിയവർ (seniors).
+            </p>
+          </div>
+          <div class="gallery-image-container"><img src="image collage for web1.jpg"></div>
         </div>
-      </section>
 
-      <div class="social-links fade-in-section">
-        <a href="https://www.instagram.com/nahjul_huda_dars_attur?igsh=eDUxNXJkMm54ZnVn" target="_blank" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/your_profile_here" target="_blank" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
-        </a>
-      </div>
+        <!-- Section 8 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="8">
+          <div class="gallery-text">
+            <h3>Graphics Service</h3>
+            <p class="spotlight-text">our Graphics service</p>
+          </div>
+          <div class="gallery-image-container"><img src="fhfnfxg.png"></div>
+        </div>
 
-      <footer class="fade-in-section">
-        <p>© 2024 NAHJUL HUDA DARS – All Rights Reserved</p>
-      </footer>
+        <!-- Section 9 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="9">
+          <div class="gallery-text">
+            <h3>കലോത്സവം വിജയികൾ</h3>
+            <p class="spotlight-text">NSS മുള്ളൂർക്കര സ്‌കൂളിൽ നടന്ന കലോത്സവത്തിൽ ഖിറാഅത്ത് മത്സരത്തിൽ 1-ാം സ്‌ഥാനം
+              നേടിയ മിസ്ബാഹുൽ ഹഖ്</p>
+          </div>
+          <div class="gallery-image-container"><img src="3.png"></div>
+        </div>
+        <!-- Section 10 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="10">
+          <div class="gallery-text">
+            <h3>ചിത്രരചന വിജയികൾ</h3>
+            <p class="spotlight-text">NSS മുള്ളൂർക്കര സ്‌കൂളിൽ നടന്ന കലോത്സവത്തിൽ ചിത്രരചനയിൽ 1-ാം സ്‌ഥാനവും 3-ാം
+              സ്‌ഥാനവും നേടിയ മിസ്ബാഹുൽ
+              ഹഖും യാസീൻ അബ്ദുല്ലയും.</p>
+          </div>
+          <div class="gallery-image-container"><img src="1.jpg"></div>
+        </div>
+
+        <!-- Section 11 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="11">
+          <div class="gallery-text">
+            <h3>ദർസിൻ്റെ അഭിമാനം</h3>
+            <p class="spotlight-text">NSS മുള്ളൂർക്കര സ്‌കൂളിലെ 8-ാം തരം ഓണപ്പരീക്ഷയിൽ 1-ാം സ്‌ഥാനവും 2-ാം സ്‌ഥാനവും
+              നേടിയ മിസ്ബാഹുൽ ഹഖും യാസീൻ
+              അബ്ദുല്ലയും.</p>
+          </div>
+          <div class="gallery-image-container"><img src="ബ.png"></div>
+        </div>
+
+        <!-- Section 12 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="12">
+          <div class="gallery-text">
+            <h3>Muharam Special</h3>
+            <p class="spotlight-text">We published muharam special magazine.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG-20250704-WA0010.jpg"></div>
+        </div>
+
+        <!-- Section 13 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="13">
+          <div class="gallery-text">
+            <h3>Samastha Winners</h3>
+            <p class="spotlight-text">Winners of the competition held on Samastha's 99th Foundation Day.</p>
+          </div>
+          <div class="gallery-image-container"><img src="Copy of Designs (Instagram Portrait)_20250705_190951_0000.jpg">
+          </div>
+        </div>
+
+        <!-- Section 14 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="14">
+          <div class="gallery-text">
+            <h3>99th Foundation Day</h3>
+            <p class="spotlight-text">Samastha's 99th Foundation Day in 2025.</p>
+          </div>
+          <div class="gallery-image-container"><img src="Copy of Designs (Instagram Portrait)_20250625_180425_0000.jpg">
+          </div>
+        </div>
+
+        <!-- Section 15 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="15">
+          <div class="gallery-text">
+            <h3>വിഭാതം പ്രകാശനം</h3>
+            <p class="spotlight-text">NUJOOMUL WAFA STUDENTS ASSOCIATION ൻ്റെ കീഴിൽ പുറത്തിറക്കിയ പ്രഥമ പത്രമായ "വിഭാതം"
+              പ്രകാശനകർമ്മം
+              നിർവഹിക്കുന്നു.</p>
+          </div>
+          <div class="gallery-image-container"><img src="WhatsApp Image 2025-06-04 at 09.05.46_a43ead27.jpg"></div>
+        </div>
+
+        <!-- Section 16 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="16">
+          <div class="gallery-text">
+            <h3>Eid-ul-Adha</h3>
+            <p class="spotlight-text">On the occasion of Eid-ul-Adha, we are giving new clothes to the relatives of our
+              Attur Mahal.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250405_164619.JPG"></div>
+        </div>
+
+        <!-- Section 21 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="21">
+          <div class="gallery-text">
+            <h3>Memorable Journey</h3>
+            <p class="spotlight-text">At the end of the first academic year (2024-25), Our mahal 'attur' takes us on a
+              journey with new clothes
+              (PHOTO 2).</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250405_164619.JPG"></div>
+        </div>
+
+        <!-- Section 22 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="22">
+          <div class="gallery-text">
+            <h3>Students of the Year</h3>
+            <p class="spotlight-text">Students of the year 2024‑25.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG-20250215-WA0008.jpg"></div>
+        </div>
+
+        <!-- Section 23 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="23">
+          <div class="gallery-text">
+            <h3>Committee 2024-25</h3>
+            <p class="spotlight-text">Our 2024‑25 Committee Members.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG-20250211-WA0002.jpg"></div>
+        </div>
+
+        <!-- Section 24 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="24">
+          <div class="gallery-text">
+            <h3>Ramadan Rules</h3>
+            <p class="spotlight-text">We have released a book containing rules for Ramadan.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250404_155330.JPG"></div>
+        </div>
+
+        <!-- Section 25 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="25">
+          <div class="gallery-text">
+            <h3>Thiruvananthapuram Trip</h3>
+            <p class="spotlight-text">Shots taken from our trip to Thiruvananthapuram (1).</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250405_164300.JPG"></div>
+        </div>
+
+        <!-- Section 26 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="26">
+          <div class="gallery-text">
+            <h3>Trip Memories</h3>
+            <p class="spotlight-text">Shots taken from our trip to Thiruvananthapuram (2).</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250405_164352.JPG"></div>
+        </div>
+
+        <!-- Section 27 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="27">
+          <div class="gallery-text">
+            <h3>Exam Success</h3>
+            <p class="spotlight-text">Those who got first, second and third positions in the semi-annual examination.
+            </p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250405_164215.JPG"></div>
+        </div>
+
+        <!-- Section 28 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="28">
+          <div class="gallery-text">
+            <h3>Prophet's Day</h3>
+            <p class="spotlight-text">Winners of the competition held as part of the Prophet's Day program.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250404_155400.JPG"></div>
+        </div>
+
+        <!-- Section 29 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="29">
+          <div class="gallery-text">
+            <h3>Range Level Title</h3>
+            <p class="spotlight-text">We won second place in the range-level competition.</p>
+          </div>
+          <div class="gallery-image-container"><img src="471492595_618376020619337_1268800198924982292_n.jpeg.jpg">
+          </div>
+        </div>
+
+        <!-- Section 30 -->
+        <div class="gallery-section reveal-on-scroll" data-search-id="30">
+          <div class="gallery-text">
+            <h3>Quarterly Examination</h3>
+            <p class="spotlight-text">Students who achieved high success in the 2024-25 Quarterly Examination.</p>
+          </div>
+          <div class="gallery-image-container"><img src="IMG_20250405_165806.JPG"></div>
+        </div>
+        <section id="contact" class="contact-section reveal-on-scroll">
+          <h2 data-text="Contact Us">Contact Us</h2>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+              </svg>
+              <p class="spotlight-text">+91 7994896533</p>
+            </div>
+            <a href="https://maps.app.goo.gl/TVZSF7A5BuitHkzTA" target="_blank"
+              style="text-decoration: none; color: inherit;">
+              <div class="contact-card">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+                <p class="spotlight-text">Our Location</p>
+              </div>
+            </a>
+          </div>
+
+          <a href="https://wa.me/917994896533" target="_blank" class="whatsapp-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.42 3.63 2.42 5.82 0 4.54-3.7 8.24-8.24 8.24-1.51 0-2.99-.41-4.28-1.19l-.31-.18-3.18.84.85-3.09-.2-.32c-.85-1.36-1.31-2.94-1.31-4.57.01-4.54 3.7-8.24 8.24-8.24m-3.41 4.69c-.19 0-.44.07-.67.33-.23.26-.88.86-.88 2.08 0 1.22.89 2.39 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.07-.1-.23-.16-.48-.28-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.83-.8 1-.15.17-.3.19-.54.07-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.15-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.23.23-.39.07-.16.04-.3-.02-.43-.07-.13-.67-1.61-.92-2.21-.24-.59-.49-.51-.67-.51z" />
+            </svg>
+            Message on WhatsApp
+          </a>
+        </section>
     </main>
+
+    <footer class="fade-in-section">
+      <p class="spotlight-text">© 2024 NAHJUL HUDA DARS – All Rights Reserved</p>
+    </footer>
   </div>
-  
+
   <!-- Image Modal -->
   <div id="imageModal" class="modal">
     <span class="close-modal">&times;</span>
@@ -549,108 +1446,150 @@
     <div id="modalCaption"></div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
   <script>
+    // --- ⭐ Initialize Lenis Smooth Scroll ⭐ ---
+    const lenis = new Lenis({
+      lerp: 0.18, // Much faster response
+      wheelMultiplier: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
     document.addEventListener("DOMContentLoaded", function () {
-      // --- ⭐ പശ്ചാത്തല ആനിമേഷൻ സ്ക്രിപ്റ്റുകൾ ---
-      const rainContainer = document.querySelector('.raindrop-container');
-      if (rainContainer) {
-        let drops = "";
-        for (let i = 0; i < 100; i++) { 
-          const left = Math.floor(Math.random() * 100);
-          const duration = Math.random() * 0.5 + 0.5;
-          const delay = Math.random() * 5;
-          const height = Math.floor(Math.random() * 30 + 10);
-          const width = 1; 
-          drops += `<div class="raindrop" style="left: ${left}%; height: ${height}px; width: ${width}px; animation-duration: ${duration}s; animation-delay: ${delay}s;"></div>`;
-        }
-        rainContainer.innerHTML = drops;
-      }
-      
-      const sections = document.querySelectorAll('.fade-in-section');
-      const options = { root: null, threshold: 0.1, rootMargin: '0px' };
-      const observer = new IntersectionObserver(function(entries, observer) {
+
+
+      const revealElements = document.querySelectorAll('.reveal-on-scroll, .fade-in-section');
+      const options = { root: null, threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+      const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(entry => {
           if (!entry.isIntersecting) { return; }
           entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         });
       }, options);
-      sections.forEach(section => { observer.observe(section); });
+      revealElements.forEach(el => { observer.observe(el); });
 
-      // --- ⭐ പുതിയ സെർച്ച്, മോഡൽ സ്ക്രിപ്റ്റുകൾ ---
-      const searchContainer = document.getElementById('searchContainer');
-      const searchInput = document.getElementById('searchInput');
       const modal = document.getElementById('imageModal');
       const modalImg = document.getElementById('modalImage');
       const captionText = document.getElementById('modalCaption');
       const closeModal = document.querySelector('.close-modal');
 
-      // മൗസ് ഐക്കണിൽ എത്തുമ്പോൾ ഇൻപുട്ട് കാണിക്കുക
-      searchContainer.addEventListener('mouseenter', () => {
-        searchContainer.classList.add('active');
-        searchInput.focus();
-      });
-
-      // സെർച്ച് ഏരിയ വിടുമ്പോൾ ഇൻപുട്ട് മറയ്ക്കുക
-      searchContainer.addEventListener('mouseleave', () => {
-        if (document.activeElement !== searchInput) {
-            searchContainer.classList.remove('active');
-        }
-      });
-      
-      searchInput.addEventListener('blur', () => {
-          searchContainer.classList.remove('active');
-      });
-
-      // സെർച്ച് ചെയ്യാനുള്ള പ്രവർത്തനം
-      const performSearch = () => {
-        const searchTerm = searchInput.value.trim();
-        if (!searchTerm) return;
-
-        const foundItem = document.querySelector(`.gallery-item[data-search-id="${searchTerm}"]`);
-        
-        if (foundItem) {
-          const img = foundItem.querySelector('img');
-          const p = foundItem.querySelector('p');
-          
-          modal.style.display = "block";
-          modalImg.src = img.src;
-          captionText.innerHTML = p.innerHTML;
-          searchInput.value = ''; // Clear input after search
-        } else {
-          alert('Sorry,no photo.');
-        }
-      };
-      
-      searchInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          event.preventDefault();
-          performSearch();
-        }
-      });
-
       // മോഡൽ അടക്കാനുള്ള സംവിധാനം
-      closeModal.onclick = function() {
+      closeModal.onclick = function () {
         modal.style.display = "none";
+        lenis.start(); // Resume scroll
       }
-      window.onclick = function(event) {
+      window.onclick = function (event) {
         if (event.target == modal) {
           modal.style.display = "none";
+          lenis.start(); // Resume scroll
         }
       }
 
       // ഗാലറിയിലെ ചിത്രങ്ങളിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ മോഡൽ തുറക്കുക
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            const p = item.querySelector('p');
-            
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            captionText.innerHTML = p.innerHTML;
+      document.querySelectorAll('.gallery-image-container').forEach(container => {
+        // Spotlight Effect
+        let ticking = false;
+        container.addEventListener('mousemove', (e) => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const rect = container.getBoundingClientRect();
+              const x = ((e.clientX - rect.left) / rect.width) * 100;
+              const y = ((e.clientY - rect.top) / rect.height) * 100;
+              container.style.setProperty('--mouse-x', `${x}%`);
+              container.style.setProperty('--mouse-y', `${y}%`);
+              ticking = false;
+            });
+            ticking = true;
+          }
         });
-    });
+
+        container.addEventListener('click', () => {
+          const section = container.closest('.gallery-section');
+          const img = container.querySelector('img');
+          const h3 = section.querySelector('h3');
+          const p = section.querySelector('p');
+
+          modal.style.display = "block";
+          modalImg.src = img.src;
+          captionText.innerHTML = `<strong>${h3.innerText}</strong><br>${p.innerText}`;
+          lenis.stop(); // Stop scroll when modal is open
+        });
+      });
+
+      // --- ⭐ Paragraph Spotlight Effect ⭐ ---
+      const spotlightTexts = document.querySelectorAll('.spotlight-text');
+      spotlightTexts.forEach(text => {
+        let ticking = false;
+        text.addEventListener('mousemove', (e) => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const rect = text.getBoundingClientRect();
+              const x = ((e.clientX - rect.left) / rect.width) * 100;
+              const y = ((e.clientY - rect.top) / rect.height) * 100;
+              text.style.setProperty('--mouse-x', `${x}%`);
+              text.style.setProperty('--mouse-y', `${y}%`);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      });
+
+      // --- ⭐ Dynamic Navbar Logic ⭐ ---
+      const navbar = document.querySelector('nav');
+      const galleryBox = document.getElementById('galleryBox');
+
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting || window.scrollY >= galleryBox.offsetTop - 100) {
+            navbar.classList.add('nav-visible');
+          } else {
+            navbar.classList.remove('nav-visible');
+          }
+        });
+      }, {
+        threshold: 0,
+        rootMargin: "-50px 0px 0px 0px"
+      });
+
+      if (galleryBox) navObserver.observe(galleryBox);
+
+      // --- ⭐ Dynamic Icon Effects (Spotlight & Tilt) ⭐ ---
+      const socialLinks = document.querySelectorAll('.social-links a, .contact-card');
+      socialLinks.forEach(link => {
+        link.addEventListener('mousemove', (e) => {
+          const rect = link.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+          link.style.setProperty('--mouse-x', `${x}%`);
+          link.style.setProperty('--mouse-y', `${y}%`);
+
+          // 3D Tilt Effect
+          if (link.classList.contains('contact-card') || link.parentElement.classList.contains('social-links')) {
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const rotateX = (e.clientY - centerY) / 10;
+            const rotateY = (centerX - e.clientX) / 10;
+            link.style.transform = `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          }
+        });
+
+        link.addEventListener('mouseleave', () => {
+          link.style.transform = '';
+        });
+      });
     });
   </script>
 </body>
+
 </html>
